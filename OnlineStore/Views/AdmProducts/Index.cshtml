@@ -1,0 +1,87 @@
+﻿@model IEnumerable<OnlineStore.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>
+    Product List
+    <a class="btn btn-primary" style="float:right" asp-action="Create">Create New</a>
+</h1>
+<hr />
+
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product Actions</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductImage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StockQuantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.BrandF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoryF)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:300px !important">
+                        <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                        <a class="btn btn-success btn-sm" asp-action="Details" asp-route-id="@item.ProductId">Details</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                    </td>
+                    <td>
+                       <img src="~/DataFiles/@item.ProductImage" style="width:90px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StockQuantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                   
+                    <td>
+                        @item.BrandF.BrandName
+                    </td>
+                    <td>
+                        @item.CategoryF.CategoryName
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
