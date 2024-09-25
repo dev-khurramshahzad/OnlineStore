@@ -1,7 +1,6 @@
 CREATE DATABASE [db_ShoppingStore]
-USE [db_ShoppingStore]
 GO
-/****** Object:  Table [dbo].[Admins]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Admins]    Script Date: 9/25/2024 12:18:37 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -19,7 +18,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Brands]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Brands]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -34,7 +33,7 @@ CREATE TABLE [dbo].[Brands](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Categories]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -50,7 +49,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Customers]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Customers]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -71,7 +70,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Feedbacks]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Feedbacks]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -89,7 +88,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderDetails]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[OrderDetails]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -106,7 +105,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Orders]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Orders]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -122,7 +121,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Products]    Script Date: 9/11/2024 11:02:32 AM ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 9/25/2024 12:18:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -142,58 +141,6 @@ PRIMARY KEY CLUSTERED
 	[ProductID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-SET IDENTITY_INSERT [dbo].[Brands] ON 
-GO
-INSERT [dbo].[Brands] ([BrandID], [BrandName], [BrandImage]) VALUES (1, N'Apple', N'path_to_apple_logo_image')
-GO
-INSERT [dbo].[Brands] ([BrandID], [BrandName], [BrandImage]) VALUES (2, N'Dell', N'path_to_dell_logo_image')
-GO
-INSERT [dbo].[Brands] ([BrandID], [BrandName], [BrandImage]) VALUES (3, N'Samsung', N'path_to_samsung_logo_image')
-GO
-INSERT [dbo].[Brands] ([BrandID], [BrandName], [BrandImage]) VALUES (4, N'Bose', N'path_to_bose_logo_image')
-GO
-INSERT [dbo].[Brands] ([BrandID], [BrandName], [BrandImage]) VALUES (5, N'Sony', N'path_to_sony_logo_image')
-GO
-SET IDENTITY_INSERT [dbo].[Brands] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Categories] ON 
-GO
-INSERT [dbo].[Categories] ([CategoryID], [CategoryName], [CategoryDetails], [CategoryImage]) VALUES (1, N'Smartphones', N'Categegory details here', N'iPods_1.png')
-GO
-INSERT [dbo].[Categories] ([CategoryID], [CategoryName], [CategoryDetails], [CategoryImage]) VALUES (2, N'Laptops', N'Categegory details here', N'laptop_1.png')
-GO
-INSERT [dbo].[Categories] ([CategoryID], [CategoryName], [CategoryDetails], [CategoryImage]) VALUES (3, N'Televisions', N'Categegory details here', N'Monitors_1.png')
-GO
-INSERT [dbo].[Categories] ([CategoryID], [CategoryName], [CategoryDetails], [CategoryImage]) VALUES (4, N'Headphones', N'Categegory details here', N'Over-Ear-_-On-Ear-Wireless-Headphones_1.png')
-GO
-INSERT [dbo].[Categories] ([CategoryID], [CategoryName], [CategoryDetails], [CategoryImage]) VALUES (5, N'Accessories', N'Categegory details here', N'Charge-_-Sync-Cables_2.png')
-GO
-SET IDENTITY_INSERT [dbo].[Categories] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Customers] ON 
-GO
-INSERT [dbo].[Customers] ([CustomerID], [FullName], [Email], [Password], [Phone], [Address], [City], [State], [ZipCode]) VALUES (3, N'Khurram', N'Khurram@gmail.com', N'123', NULL, NULL, NULL, NULL, NULL)
-GO
-INSERT [dbo].[Customers] ([CustomerID], [FullName], [Email], [Password], [Phone], [Address], [City], [State], [ZipCode]) VALUES (4, N'Temp', N'Khurram@gmail.com', N'123', NULL, NULL, NULL, NULL, NULL)
-GO
-INSERT [dbo].[Customers] ([CustomerID], [FullName], [Email], [Password], [Phone], [Address], [City], [State], [ZipCode]) VALUES (5, N'Khurram', N'Khurram@gmail.com', N'123', NULL, NULL, NULL, NULL, NULL)
-GO
-INSERT [dbo].[Customers] ([CustomerID], [FullName], [Email], [Password], [Phone], [Address], [City], [State], [ZipCode]) VALUES (6, N'Khurram', N'Khurram@gmail.com', N'1', NULL, NULL, NULL, NULL, NULL)
-GO
-SET IDENTITY_INSERT [dbo].[Customers] OFF
-GO
-SET IDENTITY_INSERT [dbo].[Products] ON 
-GO
-INSERT [dbo].[Products] ([ProductID], [ProductName], [BrandFID], [CategoryFID], [Price], [StockQuantity], [Rating], [Description], [ProductImage]) VALUES (2, N'iPhone 14', 1, 1, CAST(999.99 AS Decimal(10, 2)), 50, 5, N'Latest Apple iPhone 14 with 128GB storage', N'IPhone.jpg')
-GO
-INSERT [dbo].[Products] ([ProductID], [ProductName], [BrandFID], [CategoryFID], [Price], [StockQuantity], [Rating], [Description], [ProductImage]) VALUES (3, N'Dell XPS 13', 2, 2, CAST(1299.99 AS Decimal(10, 2)), 30, 4, N'Dell XPS 13 with Intel i7 processor and 16GB RAM', N'XPS.jpg')
-GO
-INSERT [dbo].[Products] ([ProductID], [ProductName], [BrandFID], [CategoryFID], [Price], [StockQuantity], [Rating], [Description], [ProductImage]) VALUES (4, N'Samsung 55" QLED', 3, 3, CAST(1499.99 AS Decimal(10, 2)), 20, 5, N'Samsung 55" 4K QLED TV', N'Sam.jpg')
-GO
-INSERT [dbo].[Products] ([ProductID], [ProductName], [BrandFID], [CategoryFID], [Price], [StockQuantity], [Rating], [Description], [ProductImage]) VALUES (8, N'MacBook Pro 2022', 1, 2, CAST(650000.00 AS Decimal(10, 2)), 10, 5, N'MacBook Pro 32Gb 2TB', N'MacBook Pro.png')
-GO
-SET IDENTITY_INSERT [dbo].[Products] OFF
 GO
 ALTER TABLE [dbo].[Feedbacks] ADD  DEFAULT (getdate()) FOR [FeedbackDate]
 GO

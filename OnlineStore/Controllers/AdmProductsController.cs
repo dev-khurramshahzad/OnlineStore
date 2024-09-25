@@ -165,9 +165,7 @@ namespace OnlineStore.Controllers
             }
             return RedirectToAction(nameof(Index));
 
-            ViewData["BrandFid"] = new SelectList(_context.Brands, "BrandId", "BrandName");
-            ViewData["CategoryFid"] = new SelectList(_context.Categories, "CategoryId", "CategoryName"); 
-            return View(product);
+           
         }
 
         // GET: AdmProducts/Delete/5

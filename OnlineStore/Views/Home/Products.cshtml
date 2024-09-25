@@ -1,0 +1,97 @@
+﻿@model IEnumerable<OnlineStore.Models.Product>
+@{
+    List<Category> categories = (List<Category>)ViewBag.Cats;
+    List<Brand> brands = (List<Brand>)ViewBag.Brands;
+}
+
+<div class="page-top-info">
+    <div class="container">
+        <h4>Products Page</h4>
+        <div class="site-pagination">
+            <a href="/Home/">Home</a> /
+            <a href="/Home/Categories">Categories</a> /
+        </div>
+    </div>
+</div>
+
+
+<section class="category-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <div class="filter-widget">
+                    <h2 class="fw-title">Categories</h2>
+                    <ul class="category-menu">
+                        <li><a href="/Home/Products/">All Categories </a></li>
+                       @foreach(var item in categories)
+                        {
+                            <li><a href="/Home/Products/@item.CategoryId">@item.CategoryName </a></li>
+                        }
+
+                    </ul>
+                </div>
+
+                <div class="filter-widget">
+                    <h2 class="fw-title">Brands</h2>
+                    <ul class="category-menu">
+                        <li><a href="/Home/Products/">All Brands </a></li>
+                        @foreach (var item in brands)
+                        {
+                            <li><a href="/Home/Products?brand=@item.BrandId">@item.BrandName </a></li>
+                        }
+
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
+                <div class="row">
+                  @foreach(var item in Model)
+                    {
+                        <div class="col-lg-4 col-sm-6" >
+                            <div class="product-item" style="margin:8px;padding:8px;border:2px solid blue">
+                                <div class="pi-pic">
+                                    <div class="tag-sale">ON SALE</div>
+                                    <img height="200" src="/DataFiles/@item.ProductImage" alt>
+                                    <div class="pi-links">
+                                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                    </div>
+                                  <hr />
+                                    <h4>@item.ProductName</h4>
+                                    <hr />
+                                    <table style="width:100%" >
+                                        <tr>
+                                            <td>Category</td>
+                                            <td>@item.CategoryF.CategoryName</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Brand</td>
+                                            <td>@item.BrandF.BrandName</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Price</td>
+                                            <td>@item.Price</td>
+
+                                        <tr>
+                                            <td>Rating</td>
+                                            <td>@item.Rating</td>
+                                        </tr>
+                                        <tr>
+                                            <td>QTY Avai</td>
+                                            <td>@item.StockQuantity</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
