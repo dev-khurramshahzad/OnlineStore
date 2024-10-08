@@ -23,7 +23,7 @@
                     <h2 class="fw-title">Categories</h2>
                     <ul class="category-menu">
                         <li><a href="/Home/Products/">All Categories </a></li>
-                       @foreach(var item in categories)
+                        @foreach (var item in categories)
                         {
                             <li><a href="/Home/Products/@item.CategoryId">@item.CategoryName </a></li>
                         }
@@ -42,25 +42,29 @@
 
                     </ul>
                 </div>
-                
+
             </div>
             <div class="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0">
                 <div class="row">
-                  @foreach(var item in Model)
+                    @foreach (var item in Model)
                     {
-                        <div class="col-lg-4 col-sm-6" >
+                        <div class="col-lg-4 col-sm-6">
                             <div class="product-item" style="margin:8px;padding:8px;border:2px solid blue">
                                 <div class="pi-pic">
                                     <div class="tag-sale">ON SALE</div>
-                                    <img height="200" src="/DataFiles/@item.ProductImage" alt>
+                                    <a href="/Home/ProductDetails/@item.ProductId">
+                                        <img height="200" src="/DataFiles/@item.ProductImage" alt>
+                                    </a>
                                     <div class="pi-links">
-                                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
-                                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
+                                        <a href="/Home/AddToCart/@item.ProductId" class="add-card"><i class="flaticon-bag"></i><span>ADD TO CART</span></a>
+                                        <a href="/Home/ProductDetails/@item.ProductId" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                                     </div>
-                                  <hr />
-                                    <h4>@item.ProductName</h4>
                                     <hr />
-                                    <table style="width:100%" >
+                                    <a href="/Home/ProductDetails/@item.ProductId">
+                                        <h4>@item.ProductName</h4>
+                                    </a>
+                                    <hr />
+                                    <table style="width:100%">
                                         <tr>
                                             <td>Category</td>
                                             <td>@item.CategoryF.CategoryName</td>
@@ -85,7 +89,7 @@
 
                                     </table>
                                 </div>
-                              
+
                             </div>
                         </div>
                     }

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<OnlineStore.Models.CartItem>
+@{
+    decimal total = 0;
+}
+<div class="page-top-info">
+    <div class="container">
+        <h4>Your cart</h4>
+        <div class="site-pagination">
+            <a href>Home</a> /
+            <a href>Your cart</a>
+        </div>
+    </div>
+</div>
+
+
+<section class="cart-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cart-table">
+                    <h3>Your Cart</h3>
+                    <div class="cart-table-warp">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="product-th">Product</th>
+                                    <th class="quy-th">Quantity</th>
+                                    <th class="size-th">Total</th>
+                                    <th class="total-th">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Count() < 1)
+                                {
+                                    <tr>
+                                        <td colspan="4" class="">
+                                            <h5>No Item in your cart. <a href="/Home/Products">Add Some Products</a></h5>
+                                        </td>
+                                    </tr>
+                                
+                                }
+                                else
+                                {
+
+                                    @foreach (var item in Model)
+                                    {
+                                        total = (decimal)total + (item.product.Price * item.quantity);
+                                        <tr>
+                                            <td class="product-col">
+                                                <img src="/DataFiles/@item.product.ProductImage" alt>
+                                                <div class="pc-title">
+                                                    <h4>@item.product.ProductName</h4>
+                                                    <p>Rs. @item.product.Price</p>
+                                                </div>
+                                            </td>
+                                            <td class="quy-col">
+                                                <div class="quantity">
+                                                    <div class="pro-qty">
+                                                        <input type="text" value="@item.quantity">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="size-col"><h4>@(item.product.Price * item.quantity)</h4></td>
+                                            <td class="total-col">
+                                                <a href="/Home/Remove/@item.product.ProductId">Remove</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total-cost">
+                        <h6>Total <span>Rs. @total</span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 card-right">
+                <form class="promo-code-form">
+                    <input type="text" placeholder="Enter promo code">
+                    <button>Submit</button>
+                </form>
+                <a href class="site-btn">Proceed to checkout</a>
+                <a href="/Home/Products" class="site-btn sb-dark">Continue shopping</a>
+            </div>
+        </div>
+    </div>
+</section>
+

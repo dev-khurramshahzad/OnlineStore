@@ -1,0 +1,67 @@
+﻿@model OnlineStore.Models.Product
+
+<div class="page-top-info">
+    <div class="container">
+        <h4>@Model.ProductName Details</h4>
+        <div class="site-pagination">
+            <a href="/Home/">Home</a> /
+            <a href="/Home/Categories">Categories</a> /
+        </div>
+    </div>
+</div>
+
+
+<section class="product-section">
+    <div class="container">
+        <div class="back-link">
+            <a href="/Home/Product"> &lt;&lt; Back to Product Page</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-pic-zoom">
+                    <img class="product-big-img" src="~/DataFiles/@Model.ProductImage" alt>
+                </div>
+                <div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
+                    <div class="product-thumbs-track">
+                        <div class="pt active" data-imgbigurl="~/DataFiles/@Model.ProductImage"><img src="~/DataFiles/@Model.ProductImage" alt></div>
+                        <div class="pt" data-imgbigurl="~/DataFiles/@Model.ProductImage"><img src="~/DataFiles/@Model.ProductImage" alt></div>
+                        <div class="pt" data-imgbigurl="~/DataFiles/@Model.ProductImage"><img src="~/DataFiles/@Model.ProductImage" alt></div>
+                        <div class="pt" data-imgbigurl="~/DataFiles/@Model.ProductImage"><img src="~/DataFiles/@Model.ProductImage" alt></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 product-details">
+                <h2 class="p-title">@Model.ProductName</h2>
+                <h3 class="p-price">Rs. @Model.Price</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Category</td>
+                        <td>@Model.CategoryF.CategoryName</td>
+                    </tr>
+
+                    <tr>
+                        <td>Brand</td>
+                        <td>@Model.BrandF.BrandName</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>@Model.Price</td>
+
+                    <tr>
+                        <td>Rating</td>
+                        <td>@Model.Rating</td>
+                    </tr>
+                    <tr>
+                        <td>QTY Avai</td>
+                        <td>@Model.StockQuantity</td>
+                    </tr>
+
+                </table>
+               
+                <a href="/Home/AddToCart/@Model.ProductId" class="site-btn">SHOP NOW</a>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
